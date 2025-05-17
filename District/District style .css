@@ -1,0 +1,158 @@
+
+/* Font Family Reset */
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", /* Windows */
+                 "PingFang TC", /* macOS (繁體中文) */
+                 "Helvetica Neue", /* macOS/iOS */
+                 "Heiti TC", /* macOS (黑體-繁) */
+                 "sans-serif"; /* 通用無襯線體 */
+    /* 其他 body 的預設樣式，例如 line-height, color 等 */
+}
+
+/* Page Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* District HTML Dispaly */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+    
+
+/* header */
+header {
+    background-color: #ffffff;
+    height: 90px;
+    width: 100%;
+    position: relative;
+}
+header h1 {
+    color: #000000;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    line-height: 80px;
+    text-indent: -9999px; /* 將標題退到視窗範圍之外 */
+}
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 90px; /* 與 h1 標題同高 */
+}
+header li {
+    display: inline-block;
+    margin-right: 1vw;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+header a {
+    color: #ED7A23;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;/* 取消超連結底線 */
+}
+header li:hover {
+    background-color: bisque;
+    transition-duration: 1.5s;
+}
+.Logo img {
+    height: 100px;
+    width: auto;
+}
+.Logo img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/* DistrictMap-Subdistrict */
+.District-Map {
+    flex-grow: 1;   /* 確保地圖容器填滿剩餘空間 */
+    background-color: #FFD388;
+    display: flex;
+    flex-direction: row;        /* 橫向排列 */
+    justify-content: center;    /* 水平置中 */
+    align-items: center;
+    width: 100%;                /* 設定容器寬度 */
+    max-width: 1800px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    min-height: 82vh;
+    max-height: 120vh;
+}
+/* Title Container */
+.title-container {
+    flex-basis: 150px;      /* 標題區域寬度 */
+    flex-shrink: 0;         /* 不壓縮 */
+    padding-right: 10px;    /* 地圖間距 */
+    text-align: right;      /* 標題文字靠右 */
+}
+
+.District-Map h2{
+    width: 100%;
+    font-size: 5em;
+    font-weight: 550;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Map Container */
+.map-container {
+    flex-grow: 0.5;               /* 佔據剩餘空間 */
+    min-width: 0;               /* 防止 flex item 溢出 */
+    display: flex;
+    justify-content: center;    /* 水平置中 SVG */
+    align-items: center;        /* 垂直置中 SVG */
+}
+
+/* 地圖本身大小控制 */
+.District-Map #District-Map {
+    width: 100%;            /* 填滿容器 */
+    max-width: 600px;       /* 限制最大寬度 */
+    height: auto;
+    max-height: 130vh; 
+    display: block;
+}
+
+.subdistrict:hover {
+    fill: #F8BE67;
+    cursor: pointer;
+}
+
+
+/* footer */
+footer{
+    background-color: #f0f0f0;
+    color: #ED7A23;;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0; /* << 確保 footer 不會被壓縮 */
+}
+
+
+/* RWD */
+@media (max-width: 1000px) {
+    .title-container {
+        flex-basis: 80px;
+        padding: 0;
+        text-align: center;
+    }
+    .District-Map h2 {
+        font-size: 3em;
+    }
+    .map-container {
+        flex-grow: 0.9;   
+    }
+}

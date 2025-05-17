@@ -1,0 +1,57 @@
+/* DistrictMap */
+.District-Map {
+    display: flex; /* 啟用 Flexbox 排版 */
+    flex-direction: column;  /* 讓內部的 h2 和 svg 垂直堆疊 */
+    justify-content: center; /* 在主軸(垂直方向)置中 */
+    align-items: center;     /* 在交叉軸(水平方向)置中 */
+    width: 100%;            /* 確保容器本身佔滿寬度，讓內部元素能正確居中 */
+    margin: 0 auto;
+    padding: 30px 0;        /* 增加上下內距，推開與幻燈片的空間 */
+    overflow: hidden;       /* 避免內部過大的 SVG 內容溢出影響佈局 */
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* 選擇器新增 id 確保精確控制 */
+.District-Map #Taipei-Map { 
+    max-width: 100%;           /* 確保不超出容器 */
+    width: 60%;
+    height: auto;
+    display: block;
+}
+
+.DistrictMap-Title {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    color: #ED7A23;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 20vh;          /* 控制標題與地圖之間的距離 */
+}
+
+
+/* District interactive */
+.district:hover {
+    fill: #F8BE67;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .District-Map #Taipei-Map {
+        width: 100%;
+    }
+    .DistrictMap-Title {
+        line-height: 25vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .District-Map #Taipei-Map {
+        width: 100%;
+    }
+    .DistrictMap-Title {
+        line-height: 20vh;
+    }
+}

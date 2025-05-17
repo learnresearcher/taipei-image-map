@@ -1,0 +1,304 @@
+/* Font Family Reset */
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", /* Windows */
+                 "PingFang TC", /* macOS (繁體中文) */
+                 "Helvetica Neue", /* macOS/iOS */
+                 "Heiti TC", /* macOS (黑體-繁) */
+                 "sans-serif"; /* 通用無襯線體 */
+    /* 其他 body 的預設樣式，例如 line-height, color 等 */
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 確保 body 至少佔滿整個視窗高度 */
+    margin: 0; 
+    /* 重置 body 的預設 margin */
+}
+
+/* Page Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+header{
+    background-color: #ffffff;
+    height: 90px;
+    width: 100%;
+    position: relative;
+}
+header h1{
+    color: #000000;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    line-height: 80px;
+    text-indent: -9999px; /* 將標題退到視窗範圍之外 */
+}
+header ul{
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 90px; /* 與 h1 標題同高 */
+}
+header li{
+    display: inline-block;
+    margin-right: 1vw;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+header a{
+    color: #ED7A23;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;/* 取消超連結底線 */
+}
+header li:hover{
+    background-color: bisque;
+    transition-duration: 1.5s;
+}
+.Logo img{
+    height: 100px;
+    width: auto;
+}
+.Logo img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* Subdistrict Info column */
+.SubInfo-Column {
+    color: #ffffff;
+    background-color: black;
+    background-image: url(../../Taipei/Shilin/陽明山地區/擎天崗/201911011擎天崗望七星山.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 300px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;        /* 將元素分散對齊 */
+    padding: 0 30px;                       /* 左右內邊距 */
+    box-sizing: border-box;
+    position: relative;                 /* 使用相對定位，讓遮罩偽元素可以絕對定位 */
+    z-index: 0;                         /* 確保內容在偽元素之上 */
+}
+.SubInfo-Column::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+    z-index: -1;
+    backdrop-filter: blur(4px);         /* 模糊效果 */
+    /* -webkit-backdrop-filter: blur(3px); /* Safari */
+}
+
+.SubInfo-Column > .Sub-Map,
+.SubInfo-Column > .info-text-container,
+.SubInfo-Column > img {         /* 指的是最上層獨立的 img */
+    position: relative;         /* 確保內容在偽元素之上 */
+    z-index: 1;
+}
+
+/* Info Column Map */
+.Sub-Map {
+    /* position: absolute; */
+    width: 30%;
+    height: 100%;                   /* 確保容器佔滿父層高度 */
+    display: flex;
+    align-items: center;            /* 垂直置中 SVG */
+    justify-content: flex-start;    /* 水平靠左 SVG */
+}
+
+.Sub-Map svg#subdistrict-Map {
+    width: 100%;
+    height: auto;
+    max-height: 115%;           /* 限制 SVG 高度，避免觸頂/觸底 */
+}
+
+/* Info Column Title */
+.info-text-container {
+    flex-grow: 1;                 /* 佔據中間空間 */
+    display: flex;
+    flex-direction: column;        /* 內部 h2, p 垂直堆疊 */
+    align-items: center;           /* 維持 center，讓 wrapper 置中 */
+    justify-content: center;
+    padding: 0 20px;               /* 左右留白 */
+}
+.text-align-wrapper {
+    display: inline-block;      /* 寬度由內容決定，父層控制標題區置中 */
+    text-align: left;           /* 內部的 h2 和 p 文字向左對齊 */
+}
+
+.info-text-container h2,
+.info-text-container p {
+    text-align: left;               /* 再次確保內部文字置左 */
+    margin: 0;                      /* 清除預設 margin */
+    color: #ffffff;
+
+}
+
+.info-text-container h2 {
+    font-size: 80px;
+    font-weight: bolder;
+    display: block;             /* h2 佔滿一行 p 在下一行 */
+    margin-bottom: 10px;        /* h2 和 p 之間的間距 */
+}
+.info-text-container p {
+    font-size: 40px;
+    font-weight: bolder;
+    display: block;
+}
+
+
+.SubInfo-Column img {
+    width: auto;
+    height: 250px;
+    flex-shrink: 0;         /* 確保圖片不被壓縮 */
+}
+
+
+
+
+
+/* Subdistrict Location */
+.Location-Col {
+    background-color: #FFD388;
+    display: flex;
+    justify-content: center;
+    /* padding-left: 100px; */
+    /* 抵銷 flex-start; 向左偏移的 100px  */
+    flex-grow: 1; /* 填滿可用空間 */
+}
+.Sub-Location {
+    /* background-color: #FFD388; */
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;     /* 確保不足一行的卡片靠左排列 */
+    gap: 30px;                  /* 控制項目之間的間距 */
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: calc(300px * 3 + 30px * 2 + 100px);
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.Sub-Location > div {
+    /* background-color: #fff; */
+    width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.Sub-Location img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;  
+}
+.title-link {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 5px;
+    margin: 0;
+    /* max-width: 300px; */
+    background-color: #ED7A23;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.title-link:hover {
+    background-color: #F8BE67;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.img-link img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+
+
+/* Copyright footer */
+footer{
+    background-color: #f0f0f0;
+    color: #ED7A23;;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 確保 header, .SubInfo-Column 和 footer 不會被意外壓縮 (建議) */
+header,
+.SubInfo-Column,
+footer { /* 將 footer 也加入這裡，確保其行為一致 */
+    flex-shrink: 0;
+}
+
+/* RWD */
+@media (max-width: 1100px) {
+    .SubInfo-Column > img {
+        display: none;
+    }
+    .Location-Col {
+        padding-left: 40px;
+    }
+    .Sub-Location {
+        max-width: calc(300px * 2 + 30px * 1 + 40px);
+    }
+}
+
+@media (max-width: 800px) {
+    .Sub-Map {
+        display: none;
+    }
+    .SubInfo-Column > img {
+        display: none;
+    }
+    .Location-Col {
+        padding-left: 0px;
+    }
+    
+
+    .Sub-Location {
+        max-width: calc(300px *  + 30px * 1 + 40px);
+    }
+
+    .Sub-Location > div {
+        width: 100%;
+        height: auto;
+        padding: 0 50px;
+    }
+
+    .Sub-Location img {
+        /* object-position: top; */
+        height: auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .text-align-wrapper h2 {
+        font-size: 60px;
+    }
+    .text-align-wrapper p {
+        font-size: 30px;
+    }
+}

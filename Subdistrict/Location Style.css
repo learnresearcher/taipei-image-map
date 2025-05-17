@@ -1,0 +1,295 @@
+/* Font Family Reset */
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", /* Windows */
+                 "PingFang TC", /* macOS (繁體中文) */
+                 "Helvetica Neue", /* macOS/iOS */
+                 "Heiti TC", /* macOS (黑體-繁) */
+                 "sans-serif"; /* 通用無襯線體 */
+    /* 其他 body 的預設樣式，例如 line-height, color 等 */
+}
+
+/* Page Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+header{
+    background-color: #ffffff;
+    height: 90px;
+    width: 100%;
+    position: relative;
+}
+header h1{
+    color: #000000;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    line-height: 80px;
+    text-indent: -9999px; /* 將標題退到視窗範圍之外 */
+}
+header ul{
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 90px; /* 與 h1 標題同高 */
+}
+header li{
+    display: inline-block;
+    margin-right: 1vw;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+header a{
+    color: #ED7A23;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;/* 取消超連結底線 */
+}
+header li:hover{
+    background-color: bisque;
+    transition-duration: 1.5s;
+}
+.Logo img{
+    height: 100px;
+    width: auto;
+}
+.Logo img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+/* Location Info Column */
+.Loca-info-col {
+    color: #ffffff;
+    background-color: #ED7A23;
+    height: 250px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 30px;
+    box-sizing: border-box;
+}
+
+.Loca-title {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.Loca-title h2,
+.Loca-title p {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    padding-left: 150px;
+    color: #ffffff;
+}
+
+.Loca-title h2 {
+    font-size: 80px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.Loca-title p {
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.Loca-info-col img {
+    width: auto;
+    height: 250px;
+    margin-right: 40px;
+    flex-shrink: 0;         /* 確保圖片不被壓縮 */
+}
+
+/* Location Intro Paragraph  */
+.Loca-Intro {
+    background-color: #FFD388;
+    padding: 0 40px;
+}
+.Intro-area {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Location Intro Text  */
+.intro-text {
+    margin: 10px 20px;
+    line-height: 25px;
+}
+.updated-date {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #ED7A23;
+}
+.intro-text p {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: #4f4a4a;
+}
+
+/* Location Image Text Area */
+.image-text-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.image-text {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.Loca-image {
+    width: 40%;
+}
+.Loca-image img {
+    width: auto;
+    height: 350px;
+
+}
+
+.text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 30px;
+}
+.text h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2d2b2b;
+}
+.text p {
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #4f4a4a;
+}
+
+
+.photo-date {
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ED7A23;
+    padding-bottom: 20px;
+}
+
+/* Reference Area  */
+.ref-text {
+    margin: 10px 20px;
+}
+.ref-text h3 {
+    font-size: 30px;
+    font-weight: 550;
+    margin-bottom: 15px;
+    color: #ED7A23;
+}
+
+.ref-text li {
+    font-size: 15px;
+    font-weight: bolder;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color: #363131;
+}
+
+
+
+
+
+
+/* Copyright footer */
+footer{
+    background-color: #f0f0f0;
+    color: #ED7A23;;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 1200px) {
+    .Loca-image {
+        width: 45%;
+    }
+    .text {
+        width: 55%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .Loca-info-col img {
+        display: none;
+    }
+    .image-text-area {
+        align-items: center;
+    }
+    .image-text {
+        flex-direction: column;
+        align-items: center;
+    }
+    .Loca-image {
+        margin-bottom: 30px;
+        width: 95%;
+        align-items: center;
+        object-fit: cover;
+        object-position: center;
+    }
+    .Loca-image img {
+        width: 100%;
+        height: auto;
+    }
+    .text {
+        width: 95%;
+    }
+    .text p {
+        padding: 0 30px 0 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .Loca-title h2,
+    .Loca-title p {
+        padding-left: 100px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .Loca-title h2,
+    .Loca-title p {
+        padding-left: 0px;
+    }
+    .Loca-title h2 {
+        font-size: 70px;
+    }
+    .Loca-title p {
+        font-size: 25px;
+    }
+    .ref-text h3 {
+        font-size: 25px;
+    }
+    .ref-text li {
+        font-size: 12px;
+    }
+}

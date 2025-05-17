@@ -1,0 +1,479 @@
+/* Font Family Reset */
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", /* Windows */
+                 "PingFang TC", /* macOS (繁體中文) */
+                 "Helvetica Neue", /* macOS/iOS */
+                 "Heiti TC", /* macOS (黑體-繁) */
+                 "sans-serif"; /* 通用無襯線體 */
+    /* 其他 body 的預設樣式，例如 line-height, color 等 */
+}
+/* Page Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Back to top button */
+#backtotopBtn {
+    opacity: 0;                  /* 初始狀態為透明 */
+    visibility: hidden;         /* 初始狀態為隱藏不可點擊 */
+    position: fixed;            /* 固定在視窗位置 */
+    bottom: 25px;               /* 視窗底部距離 */
+    right: 25px;                /* 靠視窗右側距離 */
+    z-index: 999;               /* 確保在所有組件最上層 */
+
+    background-color: rgba(0, 0, 0, 0.1);   /* 初始背景色彩 */
+    color: #ED7A23;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8%;
+    font-size: 20px;
+    line-height: 1;             /* 確保文字垂直置中 */
+
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, background-color 0.3s ease-in-out;
+    /* 過渡效果 */
+}
+#backtotopBtn.visible {
+    opacity: 0.7;               /* 設定顯示時的透明度 (可調整) */
+    visibility: visible;        /* << 設定為可見 */
+}
+
+#backtotopBtn:hover {
+    background-color: #F8BE67;
+    opacity: 1;                 /* 懸停時不透明 */
+}
+    
+
+/* --- Header and Navigation --- */
+header{
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;   /* 使導覽列固定在頂部 */
+    top: 0;
+    z-index: 1000;      /* 確保在最上層 */
+    height: 90px;
+    width: 100%;
+    position: relative;
+}
+
+header h1{
+    color: #000000;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    line-height: 80px;
+    text-indent: -9999px; 
+    /* 將標題退到視窗範圍之外 */
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between; /* Logo 置左，導覽項目/漢堡按鈕置右 */
+    align-items: center;
+    padding: 0 0.5%;
+    max-width: 2000px;          /* 限制內容最大寬度(可調整) */
+    margin: 0 auto;
+    height: 90px;              /* 預設導覽列高度 */
+    transition: height 0.3s ease; /* 高度變化動畫 */
+    flex-wrap: wrap; 
+    /* 允許 Logo 和漢堡按鈕在上方，選單在下方換行 */
+}
+
+#navbar .Logo img {
+    height: 100px; /* 預設 Logo 高度 */
+    width: auto;
+    transition: height 0.3s ease; /* Logo 高度變化動畫 */
+}
+#navbar .Logo img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* Navbar default - Desktop */
+#navbar .menu-dropdown {
+    display: flex;      
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: max-height 0.4s ease-out; /* 調整動畫 */
+}
+#navbar .menu-dropdown.open {
+    display: block; /* 必須是 block 或 flex 才能讓 max-height 生效 */
+    max-height: 50vh; /* 或者計算精確高度 clientHeight */
+}
+
+#navbar .menu-dropdown ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 90px;
+}
+#navbar .menu-dropdown ul li {
+    margin-left: 2rem;                  /* 項目間距 */
+}
+
+#navbar .menu-dropdown ul li a {
+    text-decoration: none;
+    color: #ED7A23; /* 文字顏色 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0rem 1rem;
+    display: block;
+    transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+#navbar .menu-dropdown a:hover{
+    background-color: bisque;
+    transition-duration: 1.5s;
+}
+/* 漢堡按鈕預設隱藏 (桌面版) */
+.hamburger-btn {
+    display: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1); /* 與返回頂端按鈕同色 */
+    border: none;
+    padding: 0.5rem;                /* 內部空間，讓三條線不會太擠 */
+    border-radius: 5px;             /* 圓角 */
+    width: 45px;                    /* 按鈕寬度，可調整 */
+    height: 50px;                   /* 按鈕高度，約 50-60px，配合導覽列高度 */
+    flex-direction: column;
+    justify-content: space-around;  /* 讓三條線平均分布 */
+    align-items: center;            /* 線條水平置中 */
+    transition: background-color 0.3s ease; /* 背景色過渡 */
+}
+.hamburger-btn span {
+    display: none;
+}
+
+
+.hamburger-btn:hover {
+    background-color: #F8BE67;
+}
+
+.hamburger-btn .hamburger-icon {
+    display: block;
+    width: 70%;                         /* 線條寬度，相對於按鈕 */
+    height: 3px;                        /* 線條高度 */
+    background-color: #ED7A23;
+    border-radius: 1px;                 /* 線條本身的小圓角 */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Carousel */
+/* DistrictMap */
+
+/* About */
+.About blockquote {
+    background-color: #FFFFFF;
+    color: #ED7A23;
+    font-weight: bold;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 1.5em;
+    text-align: center;
+}
+.AboutImage {
+    display:flex;
+    flex-direction: row;
+    background-color:#FFD388;
+    /* border-radius: 10px;
+    margin: 10px; */
+}
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.image-container img {
+    width: 1500px;
+    justify-content: center;
+    /* margin: 20px; */
+}
+
+.about-text {
+    padding: 50px;
+}
+
+.about-text p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 550;
+    color: #363131;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+
+.about-link {
+    width: 20%;
+    margin: 20px 0;
+    align-items: center;
+}
+.about-link a {
+    margin: 0;
+}
+.about-link img{
+    width: 30%;
+    margin: 30px 0;
+}
+.about-link img:hover {
+    background-color: #F8BE67;
+    cursor: pointer;
+}
+
+
+/* Rules */
+.rule-area blockquote {
+    background-color: #FFFFFF;
+    color: #ED7A23;
+    font-weight: bold;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 1.5em;
+    text-align: center;
+}
+.rule-text {
+    background-color: #FFD388;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.rule-text-col {
+    width: 65%;
+    margin-left: 10%;
+}
+
+.rule-text p {
+    display: flex;
+    /* align-items: center; */
+    text-align: left;
+    font-size: 18px;
+    font-weight: 550;
+    color: #363131;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+}
+.rule-text ul {
+    padding-left: 30px;
+}
+.rule-text li {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 550;
+    color: #363131;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+    list-style: disc;
+    text-align: left;
+}
+
+
+
+/* footer */
+footer{
+    background-color: #f0f0f0;
+    color: #ED7A23;;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* --- Media Query for RWD Navigation (螢幕寬度 <= 800px) --- */
+@media (max-width: 800px) {
+    header {
+        height: 80px;
+    }
+
+    #navbar {
+        height: auto; /* 高度自動，以容納展開的選單 */
+        min-height: 80px; /* 保持收合時的最小高度 */
+        flex-wrap: wrap; /* 允許內容換行 */
+        align-content: flex-start; /* 當換行時，內容從頭部開始對齊 */
+        padding: 0;   /* 移除 navbar 的整體 padding */
+    }
+
+    .nav-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 80px; /* 固定此行高度 */
+        padding: 0 20px 0 0; /* 右邊 20px 給漢堡，左邊 2% 給 Logo (同桌面) */
+    }
+
+    #navbar .Logo img {
+        height: 90px;
+        align-items: center;
+        margin: 0;          /* 移除額外 margin */
+    }
+
+    #navbar .menu-dropdown ul {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        margin-right: 30px;
+        /* 改為 flex 以便內部 icon 排列 */
+        /* height 與 width 已在上面設定 */
+    }
+
+    /* 下拉選單樣式 */
+    #navbar .menu-dropdown {
+        display: block;     /* 確保下拉式選單動畫生效 */
+        width: 100%; /* 佔滿 navbar 寬度 */
+        order: 3; /* 確保在 .nav-top-row 之後 */
+        background-color: white; /* 選單背景 */
+        max-height: 0; /* 初始收合狀態為0，用於動畫 */
+        overflow: hidden; /* 超出部分隱藏 */
+        transition: max-height 0.35s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    #navbar .menu-dropdown.open {
+        max-height: 50vh; /* 足夠顯示所有項目 */
+        /* 由 JS 控制增加 .open class */
+    }
+
+    /* 下拉選單內部的 ul (行動版) */
+    #navbar .menu-dropdown.open ul {
+        display: flex; /* 改回 flex 以便垂直排列 */
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin:0; /* 重置 margin */
+        list-style: none;
+        position: static; /* 移除桌面版的 absolute 定位，會影響下拉選單的隱藏 */
+        line-height: normal;    /* 重設 line-height */
+        
+    }
+
+    #navbar .menu-dropdown ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #navbar .menu-dropdown ul li a {
+        display: block;     /* 讓 a 填滿 li */
+        padding: 1rem 1.5rem; /* 上下1rem, 左右1.5rem (與左邊界保留視覺空間) */
+        font-size: 1rem; /* 文字大小與原導覽列相同 (假設原為1rem) */
+        font-weight: bold; /* 文字粗細與原導覽列相同 */
+        color: #FFFFFF; /* 文字顏色 */
+        background-color: #ED7A23; /* 選項背景色 */
+        border-bottom: 1px solid #f0f0f0; /* 下方邊線 */
+        text-align: left; /* 文字水平靠左 */
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #navbar .menu-dropdown ul li:last-child a {
+        border-bottom: none; /* 最後一個項目無邊線 */
+    }
+
+    #navbar .menu-dropdown ul li a:hover,
+    #navbar .menu-dropdown ul li a:focus {
+        background-color: #F8BE67; /* 滑鼠互動回饋色彩 */
+    }
+}
+
+@media (max-width: 600px) {
+    .hamburger-btn {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hamburger-btn {
+        margin-right: 0;
+    }
+}
+
+
+/* About and Rules RWD */
+@media (max-width: 1400px) {
+  .AboutImage {
+        flex-direction: column; /* 改為垂直堆疊 */
+        align-items: center;
+        padding: 0;
+    }
+    .image-container {
+        align-items: center;
+    }
+    .image-container img {
+        width: 30%;
+        margin: 0;
+        align-items: center;
+    }
+    .AboutImage p {
+        width: 95%;
+        margin: 0px 10px 20px 10px;
+        padding: 0;
+        font-size: 18px;
+    }
+    .rule-text p {
+        width: 95%;
+        padding: 0;
+        margin: 0 10px 20px 10px;
+        font-size: 18px;
+    }
+
+    .about-link {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        min-width: fit-content;
+    }
+    .about-link a {
+        display: inline;
+
+    }
+    .about-link .ig {
+        width: 15%;
+        margin: 0;
+        padding: 0;
+    }
+    .about-link .email {
+        width: 18%;
+    }
+}
+
+@media (max-width: 800px) {
+    .about-link .ig {
+        width: 15%;
+        margin: 0;
+        padding: 0;
+    }
+    .about-link .email {
+        width: 18%;
+    }
+    .rule-text p {
+        font-size: 16px;
+    }
+    .rule-text li {
+        font-size: 14px;
+    }
+}
