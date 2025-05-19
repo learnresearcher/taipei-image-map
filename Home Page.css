@@ -6,6 +6,7 @@ body {
                  "Heiti TC", /* macOS (黑體-繁) */
                  "sans-serif"; /* 通用無襯線體 */
     /* 其他 body 的預設樣式，例如 line-height, color 等 */
+    /* max-width: 2000px; */
 }
 /* Page Smooth Scroll */
 html {
@@ -18,7 +19,7 @@ html {
     visibility: hidden;         /* 初始狀態為隱藏不可點擊 */
     position: fixed;            /* 固定在視窗位置 */
     bottom: 25px;               /* 視窗底部距離 */
-    right: 25px;                /* 靠視窗右側距離 */
+    right: 35px;                /* 靠視窗右側距離 */
     z-index: 999;               /* 確保在所有組件最上層 */
 
     background-color: rgba(0, 0, 0, 0.1);   /* 初始背景色彩 */
@@ -191,12 +192,16 @@ header h1{
 .image-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    /* gap: 20px; /* 可選：圖片區和文字區之間的間隙 */
 
 }
 .image-container img {
-    width: 1500px;
-    justify-content: center;
+    /* width: 1500px; */
+    max-width: 100%;     /* 確保圖片不超過其容器 .image-container 的寬度 */
+    height: auto;
+    display: block;
+    /* justify-content: center; */
     /* margin: 20px; */
 }
 
@@ -225,6 +230,8 @@ header h1{
 }
 .about-link a {
     margin: 0;
+    font-size: 0;
+    /* width: 10px; */
 }
 .about-link img{
     width: 30%;
@@ -414,7 +421,7 @@ footer{
 @media (max-width: 1400px) {
   .AboutImage {
         flex-direction: column; /* 改為垂直堆疊 */
-        align-items: center;
+        align-items: center;    /* 這會讓 .about-link 在 .AboutImage 中置中 */
         padding: 0;
     }
     .image-container {
@@ -440,35 +447,40 @@ footer{
 
     .about-link {
         display: flex;
-        flex-direction: row;
+        /* flex-direction: row; 預設值 */
         justify-content: center;
         align-items: center;
-        margin: 0;
+        gap: 30px; /* 設定圖示之間的間距為 10px */
+        margin: 20px 0;
         padding: 0;
-        min-width: fit-content;
+        width: fit-content;      /* 使 .about-link 容器寬度貼合內容，便於父層對齊控制 */
     }
     .about-link a {
-        display: inline;
-
-    }
-    .about-link .ig {
-        width: 15%;
         margin: 0;
         padding: 0;
+        line-height: 0;         /* 避免圖片底部可能出現的額外空白 */
     }
-    .about-link .email {
-        width: 18%;
+    .about-link img { /* 直接設定 SVG 圖示的樣式 */
+        /* width: 40px;             */
+        /* 設定您期望的統一圖示寬度，例如 35px */
+        height: auto;           
+        /* 保持長寬比 */
+        display: block;         /* 確保良好佈局 (已由 reset 提供) */
+    }
+    .ig img {
+        width: 40px;
+    }
+    .email img {
+        width: 45px;
     }
 }
 
 @media (max-width: 800px) {
-    .about-link .ig {
-        width: 15%;
-        margin: 0;
-        padding: 0;
+    .ig img {
+        width: 30px;
     }
-    .about-link .email {
-        width: 18%;
+    .email img {
+        width: 35px;
     }
     .rule-text p {
         font-size: 16px;

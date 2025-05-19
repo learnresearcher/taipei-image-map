@@ -44,63 +44,63 @@ document.addEventListener("DOMContentLoaded", function() {
         "Jiancheng": "../Subdistrict/Datong/Jiancheng.html",
 
         // Nangang
-        "Zhongyan": "../Subdistrict/Nangang/Zhongyan.html",
-        "Sanchongpu": "../Subdistrict/Nangang/Sanchongpu.html",
-        "Xinzhuangzi": "../Subdistrict/Nangang/Xinzhuangzi.html",
-        "Houshanpo": "../Subdistrict/Nangang/Houshanpo.html",
+        // "Zhongyan": "../Subdistrict/Nangang/Zhongyan.html",
+        // "Sanchongpu": "../Subdistrict/Nangang/Sanchongpu.html",
+        // "Xinzhuangzi": "../Subdistrict/Nangang/Xinzhuangzi.html",
+        // "Houshanpo": "../Subdistrict/Nangang/Houshanpo.html",
 
         // Neihu
-        "Xihu": "../Subdistrict/Neihu/Xihu.html",
-        "Donghu": "../Subdistrict/Neihu/Donghu.html",
-        "Jinlong": "../Subdistrict/Neihu/Jinlong.html",
-        "Ziyang": "../Subdistrict/Neihu/Ziyang.html",
-        "Wanzai": "../Subdistrict/Neihu/Wanzai.html",
-        "Zhouwei": "../Subdistrict/Neihu/Zhouwei.html",
+        // "Xihu": "../Subdistrict/Neihu/Xihu.html",
+        // "Donghu": "../Subdistrict/Neihu/Donghu.html",
+        // "Jinlong": "../Subdistrict/Neihu/Jinlong.html",
+        // "Ziyang": "../Subdistrict/Neihu/Ziyang.html",
+        // "Wanzai": "../Subdistrict/Neihu/Wanzai.html",
+        // "Zhouwei": "../Subdistrict/Neihu/Zhouwei.html",
 
         // Songshan
-        "Sanmin": "../Subdistrict/Songshan/Sanmin.html",
-        "Dongshe": "../Subdistrict/Songshan/Dongshe.html",
-        "Zhonglun": "../Subdistrict/Songshan/Zhonglun.html",
-        "Benjian": "../Subdistrict/Songshan/Benjian.html",
+        // "Sanmin": "../Subdistrict/Songshan/Sanmin.html",
+        // "Dongshe": "../Subdistrict/Songshan/Dongshe.html",
+        // "Zhonglun": "../Subdistrict/Songshan/Zhonglun.html",
+        // "Benjian": "../Subdistrict/Songshan/Benjian.html",
 
         // Wanhua
-        "Ximen": "../Subdistrict/Wanhua/Ximen.html",
-        "Longshan": "../Subdistrict/Wanhua/Longshan.html",
-        "Dali": "../Subdistrict/Wanhua/Dali.html",
-        "Qingnian": "../Subdistrict/Wanhua/Qingnian.html",
-        "Dongyuan": "../Subdistrict/Wanhua/Dongyuan.html",
-        "Xiyuan": "../Subdistrict/Wanhua/Xiyuan.html",
+        // "Ximen": "../Subdistrict/Wanhua/Ximen.html",
+        // "Longshan": "../Subdistrict/Wanhua/Longshan.html",
+        // "Dali": "../Subdistrict/Wanhua/Dali.html",
+        // "Qingnian": "../Subdistrict/Wanhua/Qingnian.html",
+        // "Dongyuan": "../Subdistrict/Wanhua/Dongyuan.html",
+        // "Xiyuan": "../Subdistrict/Wanhua/Xiyuan.html",
 
         // Wenshan
-        "Muzha": "../Subdistrict/Wenshan/Muzha.html",
-        "Jingmei": "../Subdistrict/Wenshan/Jingmei.html",
-        "Wanfang": "../Subdistrict/Wenshan/Wanfang.html",
-        "Xinglong": "../Subdistrict/Wenshan/Xinglong.html",
-        "Ergeshan": "../Subdistrict/Wenshan/Ergeshan.html",
+        // "Muzha": "../Subdistrict/Wenshan/Muzha.html",
+        // "Jingmei": "../Subdistrict/Wenshan/Jingmei.html",
+        // "Wanfang": "../Subdistrict/Wenshan/Wanfang.html",
+        // "Xinglong": "../Subdistrict/Wenshan/Xinglong.html",
+        // "Ergeshan": "../Subdistrict/Wenshan/Ergeshan.html",
 
         // Xinyi
-        "Sanzhangli": "../Subdistrict/Xinyi/Sanzhangli.html",
-        "Wufenpu": "../Subdistrict/Xinyi/Wufenpu.html",
-        "Fude": "../Subdistrict/Xinyi/Fude.html",
-        "Wuxing": "../Subdistrict/Xinyi/Wuxing.html",
-        "Liuzhangli": "../Subdistrict/Xinyi/Liuzhangli.html",
+        // "Sanzhangli": "../Subdistrict/Xinyi/Sanzhangli.html",
+        // "Wufenpu": "../Subdistrict/Xinyi/Wufenpu.html",
+        // "Fude": "../Subdistrict/Xinyi/Fude.html",
+        // "Wuxing": "../Subdistrict/Xinyi/Wuxing.html",
+        // "Liuzhangli": "../Subdistrict/Xinyi/Liuzhangli.html",
 
         // Zhongshan
-        "Dazhi": "../Subdistrict/Zhongshan/Dazhi.html",
-        "Yuanshan": "../Subdistrict/Zhongshan/Yuanshan.html",
-        "Linsen": "../Subdistrict/Zhongshan/Linsen.html",
-        "Zhucelun": "../Subdistrict/Zhongshan/Zhucelun.html",
-        "Changchun": "../Subdistrict/Zhongshan/Changchun.html",
-        "Xinzhuang": "../Subdistrict/Zhongshan/Xinzhuang.html",
-        "Xiapitou": "../Subdistrict/Zhongshan/Xiapitou.html",
+        // "Dazhi": "../Subdistrict/Zhongshan/Dazhi.html",
+        // "Yuanshan": "../Subdistrict/Zhongshan/Yuanshan.html",
+        // "Linsen": "../Subdistrict/Zhongshan/Linsen.html",
+        // "Zhucelun": "../Subdistrict/Zhongshan/Zhucelun.html",
+        // "Changchun": "../Subdistrict/Zhongshan/Changchun.html",
+        // "Xinzhuang": "../Subdistrict/Zhongshan/Xinzhuang.html",
+        // "Xiapitou": "../Subdistrict/Zhongshan/Xiapitou.html",
 
         // Zhongzheng
-        "Gongguan": "../Subdistrict/Zhongzheng/Gongguan.html",
-        "Guting": "../Subdistrict/Zhongzheng/Guting.html",
-        "Dongmen": "../Subdistrict/Zhongzheng/Dongmen.html",
-        "Nanmen": "../Subdistrict/Zhongzheng/Nanmen.html",
-        "Chengnei": "../Subdistrict/Zhongzheng/Chengnei.html",
-        "Kanding": "../Subdistrict/Zhongzheng/Kanding.html"
+        // "Gongguan": "../Subdistrict/Zhongzheng/Gongguan.html",
+        // "Guting": "../Subdistrict/Zhongzheng/Guting.html",
+        // "Dongmen": "../Subdistrict/Zhongzheng/Dongmen.html",
+        // "Nanmen": "../Subdistrict/Zhongzheng/Nanmen.html",
+        // "Chengnei": "../Subdistrict/Zhongzheng/Chengnei.html",
+        // "Kanding": "../Subdistrict/Zhongzheng/Kanding.html"
 
         // "": "../Subdistrict/#/.html"
         // 檢查確認所有行政區的 SVG ID 與 Key 以及 subdistrict 路徑內的檔名完全一致
